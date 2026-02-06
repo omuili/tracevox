@@ -31,8 +31,8 @@ import {
 } from "lucide-react";
 import { signup, login, getHealth } from "../lib/api";
 
-// GitHub repo URL for open-source landing (update to your actual repo)
-const GITHUB_REPO_URL = "https://github.com/tracevox/tracevox";
+// GitHub repo URL for open-source landing
+const GITHUB_REPO_URL = "https://github.com/omuili/tracevox";
 
 // Smooth scroll function
 const scrollToSection = (e, sectionId) => {
