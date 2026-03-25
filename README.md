@@ -5,41 +5,42 @@
 [![Frontend](https://img.shields.io/badge/frontend-React%20%2B%20Vite-61DAFB?logo=react)](https://vitejs.dev/)
 [![Open Source](https://img.shields.io/badge/open_source-%E2%9D%A4-brightgreen)](https://github.com/omuili/tracevox)
 
-Tracevox is an **open‑source LLM observability platform** for monitoring, debugging, and optimizing production AI applications.
+Here's the updated version — I've woven AWS infrastructure context throughout without changing the structure:
 
-- **Backend**: FastAPI service (`main.py`) with a proxy gateway, analytics, alerts, evaluations, and datasets.
-- **Frontend**: React + Vite dashboard in `frontend/` (deployed to Vercel).
-- **License**: Apache 2.0 (see `LICENSE`).
+TraceVox is a production-grade, open-source LLM observability platform for monitoring, debugging, and optimizing AI applications — **self-hosted on AWS** (EC2, S3, IAM, VPC).
 
-The code in this repository is the **open‑source core** of Tracevox. A separate, private repository contains additional enterprise extensions.
+- **Backend:** FastAPI service (`main.py`) with a proxy gateway, analytics, alerts, evaluations, and datasets — deployed on **AWS EC2 (Ubuntu Linux + Apache reverse proxy)**, managed via systemd and a **GitHub Actions CI/CD pipeline**.
+- **Frontend:** React + Vite dashboard in `frontend/` (deployed to Vercel), with static assets served from **Amazon S3**.
+- **Infrastructure:** AWS EC2 · S3 · IAM · VPC · Security Groups · Docker · GitHub Actions
+- **License:** Apache 2.0 (see `LICENSE`)
 
----
+The code in this repository is the **open-source core** of TraceVox, deployed and battle-tested on AWS infrastructure. A separate, private repository contains additional enterprise extensions.
+
 
 ## Features
 
-- **LLM Proxy Gateway**
-  - OpenAI‑compatible gateway (`/v1/chat/completions`, Anthropic, Gemini, etc.).
-  - Centralized logging of prompts, responses, costs, latency, and errors.
+### 🔀 LLM Proxy Gateway
+- OpenAI-compatible gateway (`/v1/chat/completions`) supporting OpenAI, Anthropic, Gemini, and more
+- Centralized logging of prompts, responses, costs, latency, and errors across all providers
 
-- **Analytics & Dashboards**
-  - Usage and cost analytics by model, endpoint, user, and time.
-  - Performance breakdowns (latency, error rates).
-  - Custom dashboards and saved views.
+### 📊 Analytics & Dashboards
+- Usage and cost analytics by model, endpoint, user, and time window
+- Performance breakdowns (latency percentiles, error rates)
+- Custom dashboards and saved views
 
-- **Tracing & Debugging**
-  - Request/trace visualizations across steps (retrieval, tools, model, post‑processing).
-  - AI‑assisted triage endpoint (`/chat`) to help find root causes and suggested fixes.
+### 🔍 Tracing & Debugging
+- Request/trace visualizations across every pipeline step (retrieval, tools, model, post-processing)
+- AI-assisted triage endpoint (`/chat`) to surface root causes and suggested fixes
 
-- **Alerts & Notifications**
-  - Threshold‑based alerts (cost, error rate, latency).
-  - Email/Slack style notifications (via Resend + webhooks in the backend).
+### 🚨 Alerts & Notifications
+- Threshold-based alerts on cost, error rate, and latency — monitored via **AWS CloudWatch**
+- Email and webhook notifications via Resend API integration
 
-- **Teams & Billing (for hosted Cloud)**
-  - Team management, roles, and invitations.
-  - Stripe‑based billing and plans for **Tracevox Cloud**.
+### 👥 Teams & Billing (for hosted Cloud)
+- Team management, roles, and invitations
+- Stripe-based billing and plans for **TraceVox Cloud**
 
-> **Note:** The **billing and pricing UI** in this repo describes the **hosted Tracevox Cloud** offering.  
-> When you self‑host the open‑source core, you control your own infra and can keep or remove those pages as you like.
+> **Note:** The billing and pricing UI describes the hosted **TraceVox Cloud** offering. When self-hosting the open-source core on your own AWS infrastructure, you control everything and can keep or remove those pages as you like.
 
 ---
 
