@@ -5,7 +5,6 @@
 [![Frontend](https://img.shields.io/badge/frontend-React%20%2B%20Vite-61DAFB?logo=react)](https://vitejs.dev/)
 [![Open Source](https://img.shields.io/badge/open_source-%E2%9D%A4-brightgreen)](https://github.com/omuili/tracevox)
 
-Here's the updated version — I've woven AWS infrastructure context throughout without changing the structure:
 
 TraceVox is a production-grade, open-source LLM observability platform for monitoring, debugging, and optimizing AI applications — **self-hosted on AWS** (EC2, S3, IAM, VPC).
 
